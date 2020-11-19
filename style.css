@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* 変数　*/
+:root {
+    --main: #F26A74;
+    --sub: #FFA5A5;
+    --dark: #E13845;
+
+    --text: #444;
+    --textwhite: #fff;
+    --back: #fff;
+    --backtrans: rgba(255,255,255, 0.6);
+    --backcheck: #FFF7D2;
+    --main2sub: var(--main);
+    --main2dark: var(main);
+
+    --change: 0.5s ease-in-out;
+}
+:root.darkmode {
+    --text: #EBEBEB;
+    --textwhite: #EBEBEB;
+    --back: #231802;
+    --backtrans: rgba(35,24,2,0.7);
+    --backcheck: #372A0A;
+    --main2sub: var(--sub);
+    --main2dark: var(--dark);
+}
+
+/* 基本設定 */
+body {
+    font-family: sans-serif;
+    text-align: center;
+    color: var(--text);
+    background-color: var(--back);
+    transition: var(--change);
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, figure {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img, svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover {
+    opacity: 0.8;
+}
+.sr-only {
+    border:0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/* header img */
+.header {
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(img/candy.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: var(--change);
+}
+.darkmode .header::after {
+    filter: saturate(0.8) brightness(0.8);
+}
+
+/* header fadIn */
+.header::after {
+    animation: fade 3s ease-in-out 2s backwards;
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
