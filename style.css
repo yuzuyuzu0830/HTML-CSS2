@@ -160,3 +160,61 @@ a:hover {
         border-image-outset: 34px;
     }
 }
+/* 飾りの中身 */
+.site h1 {
+    margin: 72px 0 153px;
+}
+.site p {
+    color: var(--textwhite);
+    font-size: 16px;
+    font-weight: bold;;
+}
+.onofftext {
+    width: 137px;
+    line-height: 51px;
+    text-align: center;
+    border: solid 1px var(--sub);
+    color: var(--main);
+    font-size: 21px;
+    font-family: Georgia, serif;
+    transition: var(--change);
+    background-color: var(--backtrans);
+}
+.onofftext::before {
+    content: 'Light ';
+}
+.darkmode .onofftext::before {
+    content: 'Dark' ;
+}
+@media(min-width: 768px) {
+    .site h1 {
+        margin: 120px 0;
+    }
+    .site p {
+        font-size: 22px;
+    }
+}
+
+/*　スイッチの位置調整　*/
+.site {
+    position: relative;
+}
+.switch {
+    position: absolute;
+    top: 385px;
+    left: calc(50% - 46px);
+}
+.onoffswitch {
+    position: relative;
+    top: -8px;
+    left: 68px;
+}
+.onofftext {
+    transform: rotate(-18deg);
+}
+@media(min-width: 768px) {
+    .switch {
+        top: 366px;
+        left: calc(50% + 81px);
+    }
+}
