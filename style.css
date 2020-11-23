@@ -218,3 +218,69 @@ a:hover {
         left: calc(50% + 81px);
     }
 }
+/* 縦のライン */
+.site::after,
+.msg::before,
+.msg::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 1px;
+    height: var(--whiteline);
+    background-color: #fff;
+}
+:root {
+    --whiteline: 100px;
+    --pinkline: 100px;
+}
+@media(min-width: 768px) {
+    :root {
+        --whiteline: 154px;
+        --pinkline: 120px;
+    }
+}
+
+/*　テキスト */
+.text {
+    max-width: 378px;
+    margin: auto;
+}
+.text::before {
+    content: url(img/candy.svg);
+    margin-bottom: 18px;
+}
+.text h2 {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--main);
+    margin-bottom: 30px;
+}
+.text p {
+    font-size: 12px;
+    text-align: left;
+    line-height: 2;
+}
+.msg .text {
+    padding: 42px 25px;
+    background-color: var(--backtrans);
+    transition: background-color var(--change);
+    border-radius: 30px;
+}
+@media(min-width: 768px) {
+    .text {
+        max-width: 567px;
+        margin: auto;
+    }
+    .text h2 {
+        font-size: 25px;
+        margin-bottom: 46px;
+    }
+    .text p {
+        font-size: 18px;
+    }
+    .msg .text {
+        padding: 42px 110px;
+        border-radius: 190px;
+    }
+}
+
